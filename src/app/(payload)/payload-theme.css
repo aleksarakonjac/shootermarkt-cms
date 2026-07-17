@@ -1,0 +1,91 @@
+@layer payload-default {
+  :root {
+    --shootermarkt-red: #c20000;
+    --shootermarkt-red-dark: #980000;
+    --shootermarkt-navy: #003366;
+  }
+
+  .shootermarkt-mark {
+    color: var(--shootermarkt-red);
+    display: block;
+    height: 28px;
+    width: 28px;
+  }
+
+  .shootermarkt-logo {
+    align-items: center;
+    color: var(--shootermarkt-red);
+    display: inline-flex;
+    gap: 9px;
+  }
+
+  .shootermarkt-logo > span {
+    display: grid;
+    gap: 1px;
+    line-height: 1;
+  }
+
+  .shootermarkt-logo strong {
+    font-family: Arial Narrow, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-stretch: condensed;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+  }
+
+  .shootermarkt-logo small {
+    color: var(--shootermarkt-navy);
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+  }
+
+  .shootermarkt-login-intro {
+    border-left: 3px solid var(--shootermarkt-red);
+    margin-bottom: calc(var(--base) * 1.5);
+    padding: 3px 0 3px calc(var(--base) * 0.75);
+  }
+
+  .shootermarkt-login-intro p,
+  .shootermarkt-login-intro h1,
+  .shootermarkt-login-intro span {
+    display: block;
+    margin: 0;
+  }
+
+  .shootermarkt-login-intro p {
+    color: var(--shootermarkt-red);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+
+  .shootermarkt-login-intro h1 {
+    color: var(--theme-text);
+    font-size: 1.45rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 7px;
+  }
+
+  .shootermarkt-login-intro span {
+    color: var(--theme-elevation-500);
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .btn--style-primary {
+    --bg-color: var(--shootermarkt-red);
+    --hover-bg: var(--shootermarkt-red-dark);
+  }
+
+  .btn--style-primary:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--shootermarkt-red) 35%, transparent);
+    outline-offset: 2px;
+  }
+
+  html[data-theme="dark"] .shootermarkt-logo small {
+    color: #8ab4df;
+  }
+}

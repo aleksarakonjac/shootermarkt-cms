@@ -1,4 +1,5 @@
 import "@payloadcms/next/css";
+import "./payload-theme.css";
 import type { ServerFunctionClient } from "payload";
 import { handleServerFunctions, RootLayout } from "@payloadcms/next/layouts";
 import config from "../../../payload.config";
@@ -12,4 +13,3 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return <RootLayout config={config} importMap={importMap} serverFunction={serverFunction}>{children}</RootLayout>;
 }
-

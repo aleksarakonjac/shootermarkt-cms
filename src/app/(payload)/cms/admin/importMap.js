@@ -25,6 +25,9 @@ import { InlineToolbarFeatureClient as InlineToolbarFeatureClient_e70f5e05f09f93
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
 import { EntityTagsField as EntityTagsField_31a6e3cc } from '../../../../cms/components/EntityTagsField'
+import { LoginIntro as LoginIntro_f1cbbf74 } from '../../../../cms/components/LoginIntro'
+import { ShootermarktLogo as ShootermarktLogo_7a7cadc0 } from '../../../../cms/components/ShootermarktLogo'
+import { ShootermarktMark as ShootermarktMark_2e1ac606 } from '../../../../cms/components/ShootermarktMark'
 
 /** @type import('payload').ImportMap */
 export const importMap = {
@@ -54,5 +57,8 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#InlineToolbarFeatureClient": InlineToolbarFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24,
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1,
-  "/src/cms/components/EntityTagsField#EntityTagsField": EntityTagsField_31a6e3cc
+  "/src/cms/components/EntityTagsField#EntityTagsField": EntityTagsField_31a6e3cc,
+  "/src/cms/components/LoginIntro#LoginIntro": LoginIntro_f1cbbf74,
+  "/src/cms/components/ShootermarktLogo#ShootermarktLogo": ShootermarktLogo_7a7cadc0,
+  "/src/cms/components/ShootermarktMark#ShootermarktMark": ShootermarktMark_2e1ac606
 }

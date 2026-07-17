@@ -14,7 +14,16 @@ const hasS3Config = Boolean(process.env.S3_ENDPOINT && process.env.S3_ACCESS_KEY
 
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET!,
-  admin: { user: "cms-users" },
+  admin: {
+    user: "cms-users",
+    components: {
+      beforeLogin: ["/src/cms/components/LoginIntro#LoginIntro"],
+      graphics: {
+        Icon: "/src/cms/components/ShootermarktMark#ShootermarktMark",
+        Logo: "/src/cms/components/ShootermarktLogo#ShootermarktLogo",
+      },
+    },
+  },
   routes: { admin: "/cms/admin", api: "/cms/api" },
   editor: lexicalEditor({}),
   db: postgresAdapter({
