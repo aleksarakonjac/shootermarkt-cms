@@ -27,7 +27,6 @@ import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } f
 import { EntityTagsField as EntityTagsField_31a6e3cc } from '../../../../cms/components/EntityTagsField'
 import { LoginIntro as LoginIntro_f1cbbf74 } from '../../../../cms/components/LoginIntro'
 import { ShootermarktLogo as ShootermarktLogo_7a7cadc0 } from '../../../../cms/components/ShootermarktLogo'
-import { ShootermarktMark as ShootermarktMark_2e1ac606 } from '../../../../cms/components/ShootermarktMark'
 
 /** @type import('payload').ImportMap */
 export const importMap = {
@@ -59,6 +58,5 @@ export const importMap = {
   "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1,
   "/src/cms/components/EntityTagsField#EntityTagsField": EntityTagsField_31a6e3cc,
   "/src/cms/components/LoginIntro#LoginIntro": LoginIntro_f1cbbf74,
-  "/src/cms/components/ShootermarktLogo#ShootermarktLogo": ShootermarktLogo_7a7cadc0,
-  "/src/cms/components/ShootermarktMark#ShootermarktMark": ShootermarktMark_2e1ac606
+  "/src/cms/components/ShootermarktLogo#ShootermarktLogo": ShootermarktLogo_7a7cadc0
 }

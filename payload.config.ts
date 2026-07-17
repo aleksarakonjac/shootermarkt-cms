@@ -19,7 +19,6 @@ export default buildConfig({
     components: {
       beforeLogin: ["/src/cms/components/LoginIntro#LoginIntro"],
       graphics: {
-        Icon: "/src/cms/components/ShootermarktMark#ShootermarktMark",
         Logo: "/src/cms/components/ShootermarktLogo#ShootermarktLogo",
       },
     },

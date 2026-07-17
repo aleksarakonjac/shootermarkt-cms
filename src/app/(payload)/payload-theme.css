@@ -5,39 +5,26 @@
     --shootermarkt-navy: #003366;
   }
 
-  .shootermarkt-mark {
-    color: var(--shootermarkt-red);
-    display: block;
-    height: 28px;
-    width: 28px;
-  }
-
   .shootermarkt-logo {
-    align-items: center;
-    color: var(--shootermarkt-red);
     display: inline-flex;
-    gap: 9px;
-  }
-
-  .shootermarkt-logo > span {
-    display: grid;
-    gap: 1px;
     line-height: 1;
   }
 
-  .shootermarkt-logo strong {
-    font-family: Arial Narrow, Arial, sans-serif;
-    font-size: 1.1rem;
-    font-stretch: condensed;
+  .shootermarkt-logo strong,
+  .shootermarkt-logo span {
+    font-family: var(--font-barlow-condensed), "Barlow Condensed", sans-serif;
+    font-size: 1.35rem;
     font-weight: 800;
     letter-spacing: -0.04em;
   }
 
-  .shootermarkt-logo small {
-    color: var(--shootermarkt-navy);
-    font-size: 0.55rem;
-    font-weight: 700;
-    letter-spacing: 0.13em;
+  .shootermarkt-logo strong {
+    color: var(--shootermarkt-red);
+  }
+
+  .shootermarkt-logo span {
+    color: var(--theme-text);
+    font-weight: 600;
   }
 
   .shootermarkt-login-intro {
@@ -85,7 +72,4 @@
     outline-offset: 2px;
   }
 
-  html[data-theme="dark"] .shootermarkt-logo small {
-    color: #8ab4df;
-  }
 }
