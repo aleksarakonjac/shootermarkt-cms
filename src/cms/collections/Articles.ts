@@ -1,8 +1,9 @@
-import type { CollectionConfig } from "payload";
+import { slugField, type CollectionConfig } from "payload";
 import { BlocksFeature, lexicalEditor } from "@payloadcms/richtext-lexical";
 import { CompetitionEmbedBlock } from "../blocks/CompetitionEmbedBlock";
 import { GalleryBlock } from "../blocks/GalleryBlock";
 import { ShooterEmbedBlock } from "../blocks/ShooterEmbedBlock";
+import { excerptFromLexical } from "./articleExcerpt";
 
 export const Articles: CollectionConfig = {
   slug: "articles",
@@ -15,7 +16,12 @@ export const Articles: CollectionConfig = {
   },
   fields: [
     { name: "title", type: "text", required: true },
-    { name: "slug", type: "text", required: true, unique: true, admin: { description: "URL identifikator, npr. moj-clanak" } },
+    slugField({
+      overrides: (field) => {
+        field.fields[1].admin = { ...field.fields[1].admin, description: "Automatski se generiše iz naslova; otključaj za ručnu izmenu." };
+        return field;
+      },
+    }),
     { name: "excerpt", type: "textarea", required: true },
     { name: "content", type: "richText", required: true, editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures, BlocksFeature({ blocks: [CompetitionEmbedBlock, ShooterEmbedBlock, GalleryBlock] })] }) },
     { name: "coverImage", type: "upload", relationTo: "media", required: true },
@@ -45,5 +51,12 @@ export const Articles: CollectionConfig = {
     { name: "status", type: "select", required: true, defaultValue: "draft", options: [{ label: "Draft", value: "draft" }, { label: "In Review", value: "in_review" }, { label: "Published", value: "published" }], access: { create: ({ req }) => req.user?.role === "admin", update: ({ req }) => req.user?.role === "admin" } },
     { name: "publishedAt", type: "date", admin: { position: "sidebar" } },
   ],
-  hooks: { beforeChange: [({ data, originalDoc }) => data.status === "published" && originalDoc?.status !== "published" ? { ...data, publishedAt: new Date().toISOString() } : data] },
+  hooks: {
+    beforeValidate: [({ data, originalDoc }) => {
+      if (!data || data.excerpt?.trim() || originalDoc?.excerpt?.trim() || !data.content) return data;
+      const excerpt = excerptFromLexical(data.content);
+      return excerpt ? { ...data, excerpt } : data;
+    }],
+    beforeChange: [({ data, originalDoc }) => data.status === "published" && originalDoc?.status !== "published" ? { ...data, publishedAt: new Date().toISOString() } : data],
+  },
 };

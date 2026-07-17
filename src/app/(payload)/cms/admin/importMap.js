@@ -1,7 +1,9 @@
+import { SlugField as SlugField_2b8867833a34864a02ddf429b0728a40 } from '@payloadcms/next/client'
 import { RscEntryLexicalCell as RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
 import { RscEntryLexicalField as RscEntryLexicalField_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
 import { LexicalDiffComponent as LexicalDiffComponent_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
 import { BlocksFeatureClient as BlocksFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
+import { EntityEmbedField as EntityEmbedField_087d17ca4d9d6588ffdbcebaace4fd2e } from '../../../../../src/cms/components/EntityEmbedField'
 import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { UnderlineFeatureClient as UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
@@ -22,18 +24,20 @@ import { BlockquoteFeatureClient as BlockquoteFeatureClient_e70f5e05f09f93e00b99
 import { UploadFeatureClient as UploadFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { HorizontalRuleFeatureClient as HorizontalRuleFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { InlineToolbarFeatureClient as InlineToolbarFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
+import { EntityTagsField as EntityTagsField_be8d1bc8951b09b80ddb2fbc5dd8ce02 } from '../../../../../src/cms/components/EntityTagsField'
+import { ShootermarktLogo as ShootermarktLogo_487d5fcc182a6c9d5e598092de480a1c } from '../../../../../src/cms/components/ShootermarktLogo'
+import { LoginIntro as LoginIntro_0627b9ae3ec5f8a8e06295c2ec2710e9 } from '../../../../../src/cms/components/LoginIntro'
 import { S3ClientUploadHandler as S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24 } from '@payloadcms/storage-s3/client'
 import { CollectionCards as CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1 } from '@payloadcms/next/rsc'
-import { EntityTagsField as EntityTagsField_31a6e3cc } from '../../../../cms/components/EntityTagsField'
-import { LoginIntro as LoginIntro_f1cbbf74 } from '../../../../cms/components/LoginIntro'
-import { ShootermarktLogo as ShootermarktLogo_7a7cadc0 } from '../../../../cms/components/ShootermarktLogo'
 
 /** @type import('payload').ImportMap */
 export const importMap = {
+  "@payloadcms/next/client#SlugField": SlugField_2b8867833a34864a02ddf429b0728a40,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalCell": RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalField": RscEntryLexicalField_44fe37237e0ebf4470c9990d8cb7b07e,
   "@payloadcms/richtext-lexical/rsc#LexicalDiffComponent": LexicalDiffComponent_44fe37237e0ebf4470c9990d8cb7b07e,
   "@payloadcms/richtext-lexical/client#BlocksFeatureClient": BlocksFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
+  "/src/cms/components/EntityEmbedField#EntityEmbedField": EntityEmbedField_087d17ca4d9d6588ffdbcebaace4fd2e,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
@@ -54,9 +58,9 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#UploadFeatureClient": UploadFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#HorizontalRuleFeatureClient": HorizontalRuleFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#InlineToolbarFeatureClient": InlineToolbarFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
+  "/src/cms/components/EntityTagsField#EntityTagsField": EntityTagsField_be8d1bc8951b09b80ddb2fbc5dd8ce02,
+  "/src/cms/components/ShootermarktLogo#ShootermarktLogo": ShootermarktLogo_487d5fcc182a6c9d5e598092de480a1c,
+  "/src/cms/components/LoginIntro#LoginIntro": LoginIntro_0627b9ae3ec5f8a8e06295c2ec2710e9,
   "@payloadcms/storage-s3/client#S3ClientUploadHandler": S3ClientUploadHandler_f97aa6c64367fa259c5bc0567239ef24,
-  "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1,
-  "/src/cms/components/EntityTagsField#EntityTagsField": EntityTagsField_31a6e3cc,
-  "/src/cms/components/LoginIntro#LoginIntro": LoginIntro_f1cbbf74,
-  "/src/cms/components/ShootermarktLogo#ShootermarktLogo": ShootermarktLogo_7a7cadc0
+  "@payloadcms/next/rsc#CollectionCards": CollectionCards_f9c02e79a4aed9a3924487c0cd4cafb1
 }
