@@ -11,6 +11,9 @@ import { Media } from "./src/cms/collections/Media";
 
 const databaseCa = readFileSync(path.resolve(process.cwd(), "supabase/certs/prod-ca-2021.crt"), "utf8");
 const hasS3Config = Boolean(process.env.S3_ENDPOINT && process.env.S3_ACCESS_KEY_ID && process.env.S3_SECRET_ACCESS_KEY);
+const mediaBucket = process.env.S3_BUCKET ?? "media";
+// Supabase S3 endpoint (.../storage/v1/s3) traži potpis; javni bucket se čita preko .../storage/v1/object/public.
+const publicMediaUrl = `${process.env.S3_ENDPOINT?.replace(/\/s3\/?$/, "")}/object/public/${mediaBucket}`;
 
 export default buildConfig({
   secret: process.env.PAYLOAD_SECRET!,
@@ -42,8 +45,13 @@ export default buildConfig({
   plugins: [
     s3Storage({
       enabled: hasS3Config,
-      collections: { media: { disablePayloadAccessControl: true } },
-      bucket: process.env.S3_BUCKET ?? "media",
+      collections: {
+        media: {
+          disablePayloadAccessControl: true,
+          generateFileURL: ({ filename, prefix }) => `${publicMediaUrl}/${prefix ? `${prefix}/` : ""}${filename}`,
+        },
+      },
+      bucket: mediaBucket,
       config: {
         credentials: {
           accessKeyId: process.env.S3_ACCESS_KEY_ID ?? "",
