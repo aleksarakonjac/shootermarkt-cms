@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 type Entity = "shooter" | "competition";
 type Result = { id: number; name?: string; firstName?: string; lastName?: string; clubName?: string; date?: string };
 
-const apiUrl = process.env.NEXT_PUBLIC_SHOOTERMARKT_API_URL ?? "https://shootermarkt.vercel.app";
+const apiUrl = process.env.NEXT_PUBLIC_SHOOTERMARKT_API_URL ?? "https://shootermarkt.com";
 
 function labelFor(result: Result, entity: Entity) {
   if (entity === "shooter") return [result.firstName, result.lastName, result.clubName].filter(Boolean).join(" · ");

@@ -8,7 +8,7 @@ type TagType = "topic" | "competition" | "shooter" | "club" | "discipline";
 type Tag = { id: string; type: TagType; label: string; refId?: number; disciplineCode?: string };
 type Result = { id: number; name?: string; firstName?: string; lastName?: string; city?: string; date?: string; clubName?: string };
 
-const apiUrl = process.env.NEXT_PUBLIC_SHOOTERMARKT_API_URL ?? "https://shootermarkt.vercel.app";
+const apiUrl = process.env.NEXT_PUBLIC_SHOOTERMARKT_API_URL ?? "https://shootermarkt.com";
 const entityEndpoints = { shooter: "shooters-search", competition: "competitions-search", club: "clubs-search" } as const;
 const disciplines = ["ARM", "ARW", "APM", "APW", "R3PM", "R3PW"];
 
